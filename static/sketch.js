@@ -16,13 +16,14 @@ var sel;
 
 function modelReady() {
 	model.generate(gotSketch);
+	background(255);
 }
 
 function gotSketch(err, res) {
 	rnnPath = res;
 }
 
-function humanDrawing(){
+function humanDrawing(evt){
 	console.log('Mouse pressed');
 	personDrawing = true;
 	rnnDrawing = false;
@@ -30,6 +31,9 @@ function humanDrawing(){
 	points = [];
 	x = mouseX;
 	y = mouseY;
+	evt.preventDefault();
+	evt.stopPropogation();
+	return(false);
 }
 
 function rnnStart(event){
@@ -108,6 +112,11 @@ function mySelectEvent() {
 	rnnDrawing = false;
 	humanDrawing = false;
 	background(255);
+	push();
+	rectMode(CENTER);
+	textAlign(CENTER);
+	text('please wait', w/2, h/2, 200, 200);
+	pop();
 }
 
 function setup() {
@@ -149,6 +158,11 @@ function setup() {
 	sel.value("cat")
 
 	model = ml5.sketchRNN("cat", modelReady);
+	push();
+	rectMode(CENTER);
+	textAlign(CENTER);
+	text('please wait', w/2, h/2, 200, 200);
+	pop();
 
 	// background(200);
 	// stroke(100);
