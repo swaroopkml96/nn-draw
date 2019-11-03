@@ -1,0 +1,111 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} Draw! {% endblock title %}
+
+{% block head %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+<script src="https://unpkg.com/ml5@0.4.1/dist/ml5.min.js"></script>
+<script src={{ url_for('send_static', path='sketch.js') }}></script>
+<script src={{ url_for('send_static', path='rdp.js') }}></script>
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center"> Draw together with a neural network! </h1>
+  <p class="text-center">
+    <small>
+      Select a thing from the list and start drawing. When you stop, the neural network will try to complete it for you. Inspired by <a href="https://www.youtube.com/watch?v=ZCXkvwLxBrA"> Coding challenge #153</a>. <a href="https://magenta.tensorflow.org/sketch-rnn-demo"> Here</a> is a friendly blogpost by the authors. However, if you want to bask in its full math-glory, continue to <a href="https://arxiv.org/abs/1704.03477"> their paper </a> at your own peril.
+    </small>
+  </p>
+</div>
+<div id="canvasHolder" align="center"> </div>
+
+<table align="center" width="100%">
+  <tr>
+    <td align="left"><div id="modelSelector"> </div> </td>
+    <td align="right"><div id="clearButton"> </div></td>
+    <td align="center"><div id="autoButton"> </div> </td>
+
+  </tr>
+</table>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-xs-6 small">
+        <table class="table table-striped">
+          <tr>
+
+          </tr>
+          <tr>
+            <td>
+              Message
+            </td>
+            <td>
+              <div id='messageBox'>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Text Size
+            </td>
+            <td>
+              <div id='textSize'>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Number of particles
+            </td>
+            <td>
+              <div id='nParticles'>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Desire
+            </td>
+            <td>
+              <div id='maxSeekVel'>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Fear
+            </td>
+            <td>
+              <div id='maxFleeVel'>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sight
+            </td>
+            <td>
+              <div id='sight'>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div id='redrawButton'>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="
+        col-xs-6">
+        <div id="canvasHolder" align="center">
+        </div>
+      </div>
+    </div>
+  </div>
+ -->
+
+{% endblock content %}
