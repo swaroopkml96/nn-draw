@@ -112,7 +112,7 @@ function mySelectEvent() {
 
 function setup() {
 	w = windowWidth*0.9;
-	h = windowHeight*0.6;
+	h = windowHeight*0.55;
 
 	c = createCanvas(w, h).parent('canvasHolder');
 	c.touchStarted(humanDrawing);
