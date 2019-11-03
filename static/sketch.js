@@ -113,6 +113,8 @@ function mySelectEvent() {
 	humanDrawing = false;
 	background(255);
 	push();
+	stroke(0);
+	strokeWeight(3);
 	rectMode(CENTER);
 	textAlign(CENTER);
 	text('please wait', w/2, h/2, 200, 200);
@@ -121,7 +123,7 @@ function mySelectEvent() {
 
 function setup() {
 	w = windowWidth*0.9;
-	h = windowHeight*0.5;
+	h = windowHeight*2/3;
 
 	c = createCanvas(w, h).parent('canvasHolder');
 	c.touchStarted(humanDrawing);
@@ -159,6 +161,8 @@ function setup() {
 
 	model = ml5.sketchRNN("cat", modelReady);
 	push();
+	stroke(0);
+	strokeWeight(3);
 	rectMode(CENTER);
 	textAlign(CENTER);
 	text('please wait', w/2, h/2, 200, 200);
