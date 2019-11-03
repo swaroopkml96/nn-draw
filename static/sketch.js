@@ -114,7 +114,7 @@ function mySelectEvent() {
 	background(255);
 	push();
 	stroke(0);
-	strokeWeight(3);
+	strokeWeight(1);
 	rectMode(CENTER);
 	textAlign(CENTER);
 	text('please wait', w/2, h/2, 200, 200);
@@ -162,7 +162,7 @@ function setup() {
 	model = ml5.sketchRNN("cat", modelReady);
 	push();
 	stroke(0);
-	strokeWeight(3);
+	strokeWeight(1);
 	rectMode(CENTER);
 	textAlign(CENTER);
 	text('please wait', w/2, h/2, 200, 200);
