@@ -1,32 +1,3 @@
-// function setup() {
-// 	w = 600;
-// 	h = 400;
-	// message = createInput('Hello!').parent('messageBox');
-	// text_size = createSlider(1, 150, 100, 1).parent('textSize');
-	// n = createSlider(1, 1000, 500, 1).parent('nParticles');
-	// maxSeekVel = createSlider(1, 10, 5).parent('maxSeekVel');
-	// maxFleeVel = createSlider(1, 20, 10).parent('maxFleeVel');
-	// sight = createSlider(1, 60, 30).parent('sight');
-
-	// redraw_button = createButton('Redraw').parent('redrawButton');
-	// redraw_button.mousePressed(changeMessage);
-
-	// createCanvas(w, h).parent('canvasHolder');
-	// pixelDensity(1);
-
-	// msg_graphics = createGraphics(w, h);
-	// msg_graphics.pixelDensity(1);
-
-	// msg_graphics.background(200);
-	// msg_graphics.textAlign(CENTER, CENTER);
-	// msg_graphics.textSize(text_size.value());
-	// msg_graphics.text(message.value(), 0, 0, w, h);
-
-	// valid_pixels = compute_valid_pixels(msg_graphics);
-
-	// circles = create_circles(valid_pixels);
-// }
-
 const availableModels = ['bird', 'ant','ambulance','angel','alarm_clock','antyoga','backpack','barn','basket','bear','bee','beeflower','bicycle','book','brain','bridge','bulldozer','bus','butterfly','cactus','calendar','castle','cat','catbus','catpig','chair','couch','crab','crabchair','crabrabbitfacepig','cruise_ship','diving_board','dog','dogbunny','dolphin','duck','elephant','elephantpig','everything','eye','face','fan','fire_hydrant','firetruck','flamingo','flower','floweryoga','frog','frogsofa','garden','hand','hedgeberry','hedgehog','helicopter','kangaroo','key','lantern','lighthouse','lion','lionsheep','lobster','map','mermaid','monapassport','monkey','mosquito','octopus','owl','paintbrush','palm_tree','parrot','passport','peas','penguin','pig','pigsheep','pineapple','pool','postcard','power_outlet','rabbit','rabbitturtle','radio','radioface','rain','rhinoceros','rifle','roller_coaster','sandwich','scorpion','sea_turtle','sheep','skull','snail','snowflake','speedboat','spider','squirrel','steak','stove','strawberry','swan','swing_set','the_mona_lisa','tiger','toothbrush','toothpaste','tractor','trombone','truck','whale','windmill','yoga', 'yogabicycle'];
 
 var model;
@@ -140,8 +111,8 @@ function mySelectEvent() {
 }
 
 function setup() {
-	w = windowWidth;
-	h = windowHeight*2/3;
+	w = windowWidth*0.9;
+	h = windowHeight*0.6;
 
 	c = createCanvas(w, h).parent('canvasHolder');
 	c.touchStarted(humanDrawing);
